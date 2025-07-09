@@ -5,7 +5,7 @@ import {
   getMessages,
   socket,
 } from "../services/backenInt";
-import chatRoom from "../components/chatRoom";
+import ChatRoom from "../components/ChatRoom";
 
 export default function Home({ user }) {
   const [rooms, setRooms] = useState([]);
@@ -33,21 +33,23 @@ export default function Home({ user }) {
       <aside className="w-1/4 bg-gray-800 text-white p-4">
         <h2 className="text-lg mb2">Rooms</h2>
         <ul>
-          {rooms.map((room) => (
-            <li key={room._id} className="mb2">
-              <button
-                onClick={() => handleJoinRoom(room)}
-                className="w-full bg-gray-700 p-2 rounded hover:bg-gray-600"
-              >
-                {room.name}
-              </button>
-            </li>
-          ))}
+          {rooms.map((room) => {
+            return (
+              <li key={room._id} className="mb2">
+                <button
+                  onClick={() => handleJoinRoom(room)}
+                  className="w-full bg-gray-700 p-2 rounded hover:bg-gray-600"
+                >
+                  {room.name}
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </aside>
       <main className="flex-1 p-4">
         {currentRoom ? (
-          <chatRoom
+          <ChatRoom
             room={currentRoom}
             messages={messages}
             user={user}

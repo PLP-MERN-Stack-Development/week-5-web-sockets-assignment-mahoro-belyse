@@ -3,6 +3,6 @@ const router = express.Router();
 
 const { getRoomMessages } = require("../controllers/messageController");
 
-router.get("/", getRoomMessages);
+router.get("/:roomId", getRoomMessages);
 
 module.exports = router;

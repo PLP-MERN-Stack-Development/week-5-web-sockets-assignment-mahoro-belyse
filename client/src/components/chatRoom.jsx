@@ -1,4 +1,4 @@
-import { useEffect, UseRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function chatRoom({ room, messages, user, socket }) {
   const [chat, setChat] = useState("");
