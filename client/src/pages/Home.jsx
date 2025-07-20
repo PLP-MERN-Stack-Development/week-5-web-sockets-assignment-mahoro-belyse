@@ -5,7 +5,7 @@ import {
   getMessages,
   socket,
 } from "../services/backenInt";
-
+import ChatRoom from "../components/ChatRoom";
 
 export default function Home({ user }) {
   const [rooms, setRooms] = useState([]);
